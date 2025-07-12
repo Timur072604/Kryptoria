@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    
+    <link rel="stylesheet" href="/theme-critical.css">
+
+    <script>
+      (function() {
+        function getInitialTheme() {
+          let theme = 'light';
+          try {
+            const storedThemeValue = localStorage.getItem('theme');
+            if (storedThemeValue) {
+              try {
+                const parsedTheme = JSON.parse(storedThemeValue);
+                if (parsedTheme === 'dark') {
+                  theme = 'dark';
+                }
+              } catch (e) {
+                if (storedThemeValue === 'dark') {
+                    theme = 'dark';
+                }
+              }
+            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+              theme = 'dark';
+            }
+          } catch (e) {
+          }
+          return theme;
+        }
+        const theme = getInitialTheme();
+        const root = document.documentElement;
+        root.classList.remove('theme-light', 'theme-dark');
+        root.classList.add('theme-' + theme);
+      })();
+    </script>
+    <style>
+      html, body, #root {
+        min-height: 100vh;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

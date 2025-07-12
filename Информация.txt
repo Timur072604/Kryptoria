@@ -1,0 +1,6 @@
+Профили:
+User User@example.com UserUser1,
+Admin Admin@example.com AdminAdmin1,
+
+Для работы БД я использовал XAMPP Control Panel.
+Для запуска MailHog (возможность восстановления пароля) использовал MailHog_windows_386.exe (https://github.com/mailhog/MailHog/releases/tag/v1.0.1).
