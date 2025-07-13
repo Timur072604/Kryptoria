@@ -40,11 +40,11 @@
 ### Architecture Highlights  
 - **Backend**:  
   - Layered structure (controllers, services, repositories, DTOs).  
-  - `CipherService` class implements Caesar cipher logic (see [code](CipherService.java)).  
+  - `CipherService` class implements Caesar cipher logic.
 - **Frontend**:  
   - Component-based React app with global state management (Context API).  
 - **Database**:  
-  - Entities: `User`, `Role`, `RefreshToken` (see [ER Diagram](ER_Diagram.png)).  
+  - Entities: `User`, `Role`, `RefreshToken`.
 
 ### Implementation Notes  
 1. **Caesar Cipher**:  
